@@ -1,0 +1,168 @@
+/* Font dan warna tema Barbie */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffe1f0;
+  color: #d6336c;
+}
+
+header {
+  background: #ff69b4;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(214, 51, 108, 0.4);
+}
+
+.slides {
+  display: none;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* Tombol navigasi slideshow */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  padding: 8px 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgba(255,105,180,0.7);
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background-color: #ff1493;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* Dot indikator */
+.dots {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.dot.active, .dot:hover {
+  background-color: #d6336c;
+}
+
+/* Section About & Portfolio */
+section {
+  padding: 20px 15px;
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(214, 51, 108, 0.15);
+}
+
+section h2 {
+  color: #d6336c;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* Gambar profil */
+.profile-img {
+  display: block;
+  max-width: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  border: 5px solid #ff69b4;
+}
+
+/* Grid portofolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.portfolio-item {
+  background: #ffe1f0;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 7px rgba(214, 51, 108, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(214, 51, 108, 0.4);
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #ff69b4;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio Barbie</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>My Barbie Portfolio</header>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+  <img class="slides" src="bebb.png" alt="Slide 1: Barbie Pink" />
+  <img class="slides" src="bebb1.png" alt="Slide 2: Barbie Dream" />
+  <img class="slides" src="bebb2.jfif" alt="Slide 3: Barbie Style" />
+
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+<div class="dots">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<!-- About Section -->
+<section>
+  <h2>About Me</h2>
+  <img src="https://i.imgur.com/OvMZBs9.jpg" alt="Profile" class="profile-img" />
+  <p>Hi! Saya penggemar Barbie dan desainer kreatif yang suka karya warna-warni. Berpengalaman di desain grafis dan web development. Selamat menikmati portofolio saya!</p>
+</section>
+
+<!-- Portfolio Section -->
+<section>
+  <h2>My Projects</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="back1.jfif" alt="Project 1" />
+      <h3>Pink Dream</h3>
+      <p>Ilustrasi karakter Barbie warna pink cerah.</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="back2.jfif" alt="Project 2" />
+      <h3>Fashion Line</h3>
+      <p>Konsep fashion modern bertema Barbie.</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="back3.jfif" alt="Project 3" />
+      <h3>Website Design</h3>
+      <p>Web portofolio warna cerah dan responsif.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ by Barbie Lover
+</footer>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slides");
+  const dots = document.getElementsByClassName("dot");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  function showSlides(n) {
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      dots[i].classList.remove("active");
+    }
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add("active");
+  }
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  prev.addEventListener("click", () => plusSlides(-1));
+  next.addEventListener("click", () => plusSlides(1));
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", () => currentSlide(i));
+  }
+
+  function autoSlide() {
+    plusSlides(1);
+    setTimeout(autoSlide, 5000);
+  }
+
+  showSlides(slideIndex);
+  setTimeout(autoSlide, 5000);
+</script>
+
+</body>
+</html>
